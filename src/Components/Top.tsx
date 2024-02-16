@@ -1,5 +1,5 @@
 const Top = () => {
-  return <div>Top</div>;
+  return <></>;
 };
 
 export default Top;
