@@ -1,0 +1,19 @@
+@use "./variables" as *;
+
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 20px 30px;
+  background-color: white;
+  width: 90%;
+  position: absolute;
+  bottom: 1.5rem;
+  font-size: 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: $text-font;
+}
