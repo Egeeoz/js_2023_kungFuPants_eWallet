@@ -8,10 +8,11 @@ import DropDownInput from "../Components/DropDownInput";
 const AddCard = () => {
   return (
     <>
-      <Top text="Add a new bank card" />
+    <Top text="Add a new bank card" smalltext="New Card" />
       <Card/>
       <TextInput/>
       <DropDownInput/>
+      
       <Button text="Add card" to={"/"}></Button>
     </>
   );

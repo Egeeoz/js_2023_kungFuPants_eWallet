@@ -6,7 +6,7 @@ import CardStack from "../Components/CardStack";
 const Home = () => {
   return (
     <>
-      <Top text="E-wallet" />
+      <Top text="E-wallet" smalltext="Active card" />
       <Card/>
       <CardStack/>
       <Button text="add a new card" to={"/Add"}></Button>
