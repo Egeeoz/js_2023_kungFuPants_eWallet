@@ -4,7 +4,7 @@ import Top from "../Components/Top";
 const AddCard = () => {
   return (
     <>
-      <Top text="Add a new bank card" />
+      <Top text="Add a new bank card" smalltext="New Card" />
       <Button text="Add card" to={"/"}></Button>
     </>
   );
