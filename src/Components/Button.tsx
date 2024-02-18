@@ -1,5 +1,5 @@
 import "../abstracts/button.scss";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 interface Props {
   text: string;
@@ -8,13 +8,10 @@ interface Props {
 
 const Button = ({ text, to }: Props) => {
   return (
-    <section>
-      <Link to={to}>
-        <button>{text}</button>
-      </Link>
-    </section>
+    <Link to={to}>
+      <button>{text}</button>
+    </Link>
   );
 };
 
 export default Button;
-
