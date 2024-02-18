@@ -1,5 +1,5 @@
 .dropdown-container {
-  width: 90%;
+  min-width: 400px;
   justify-content: center;
   margin: 0 auto;
 }
@@ -7,6 +7,7 @@
 .dropdown-wrapper {
   display: flex;
   width: 100%;
+  min-width: 400px;
 }
 
 .img-box {
@@ -30,7 +31,9 @@
   padding: 16px;
   font-size: 16px;
   cursor: pointer;
-  border-style: solid;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  min-width: 400px;
   width: 100%;
   display: flex;
   justify-content: end;

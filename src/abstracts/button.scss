@@ -4,22 +4,22 @@ a {
   width: 100%;
   display: flex;
   justify-content: center;
- 
 }
 
 .Btn-add {
-  padding: 20px 30px;
   background-color: white;
-  width: 90%;
-  position: absolute;
-  bottom: 1.5rem;
-  font-size: 18px;
-  border-radius: 5px;
-  font-weight: bold;
-  font-family: $text-font;
+  // width: 90%;
+  // position: absolute;
+  // bottom: 1.5rem;
 }
 
 .addCardBtn {
   color: $defualt-card;
   background-color: $button-color;
+  font-size: 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: $text-font;
+  padding: 20px 30px;
+  width: 100%;
 }
