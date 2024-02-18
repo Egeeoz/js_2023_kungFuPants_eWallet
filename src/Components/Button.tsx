@@ -8,11 +8,9 @@ interface Props {
 
 const Button = ({ text, to }: Props) => {
   return (
-    
-      <Link to={to}>
-        <button>{text}</button>
+    <Link to={to}>
+        <button className="Btn-add">{text}</button>
       </Link>
-    
   );
 };
 
