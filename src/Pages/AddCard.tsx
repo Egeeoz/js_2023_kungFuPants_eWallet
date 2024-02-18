@@ -5,7 +5,7 @@ const AddCard = () => {
   return (
     <>
       <Top text="Add a new bank card" />
-      <Button text="Add card"></Button>
+      <Button text="Add card" to={"/"}></Button>
     </>
   );
 };
