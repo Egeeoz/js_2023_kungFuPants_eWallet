@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <Top text="E-wallet" />
-      <Button text="add a new card"></Button>
+      <Button text="add a new card" to={"/Add"}></Button>
     </>
   );
 };
