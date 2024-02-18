@@ -12,7 +12,7 @@ import AddCard from "./Pages/AddCard";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-        <Route index element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/Add" element={<AddCard />} />
     </Route>
   )
