@@ -1,0 +1,9 @@
+@use "./variables" as *;
+
+h1 {
+  font-family: $heading-font;
+  text-align: center;
+  max-width: 50%;
+  margin: 2rem auto;
+  line-height: 2.1rem;
+}
