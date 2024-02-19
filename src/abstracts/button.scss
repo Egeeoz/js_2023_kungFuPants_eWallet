@@ -1,21 +1,8 @@
 @use "./variables" as *;
 
-// a {
-//   width: 100%;
-//   display: flex;
-//   justify-content: center;
-// }
-
-.Btn-add {
+button {
+  color: $button-color;
   background-color: white;
-  // width: 90%;
-  // position: absolute;
-  // bottom: 1.5rem;
-}
-
-.addCardBtn {
-  color: white;
-  background-color: $button-color;
   font-size: 18px;
   border-radius: 8px;
   font-weight: 700;
@@ -24,4 +11,10 @@
   width: 100%;
   margin-top: 1rem;
   min-height: 70px;
+}
+
+.addCardBtn,
+button {
+  color: white;
+  background-color: $button-color;
 }
