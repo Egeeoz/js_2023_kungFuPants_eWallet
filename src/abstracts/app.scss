@@ -1,0 +1,10 @@
+@use "./variables" as *;
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1rem;
+}

@@ -4,13 +4,16 @@ import { Link } from "react-router-dom";
 interface Props {
   text: string;
   to: string;
+  className?: string;
 }
 
-const Button = ({ text, to }: Props) => {
+const Button = ({ text, to, className }: Props) => {
   return (
     <Link to={to}>
-      <button>{text}</button>
+
+      <button className={className}>{text}</button>
     </Link>
+
   );
 };
 

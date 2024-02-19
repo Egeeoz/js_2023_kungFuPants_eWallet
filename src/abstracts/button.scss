@@ -1,19 +1,20 @@
 @use "./variables" as *;
 
-Link {
+button {
+  color: $button-color;
+  background-color: white;
+  font-size: 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-family: $text-font;
+  min-width: 400px;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  margin-top: 1rem;
+  min-height: 70px;
 }
 
+.addCardBtn,
 button {
-  padding: 20px 30px;
-  background-color: white;
-  width: 90%;
-  position: absolute;
-  bottom: 1.5rem;
-  font-size: 18px;
-  border-radius: 5px;
-  font-weight: bold;
-  font-family: $text-font;
+  color: white;
+  background-color: $button-color;
 }

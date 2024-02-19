@@ -1,0 +1,81 @@
+@use "./variables" as *;
+.dropdown-container {
+  min-width: 400px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.dropdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 400px;
+  margin-bottom: 1rem;
+}
+.vendor {
+  font-weight: 400;
+  font-family: $text-font;
+  color: rgba(0, 0, 0, 0.8);
+}
+.img-box {
+  display: grid;
+  background-color: blue;
+  height: 2rem;
+  width: 2rem;
+  justify-content: center;
+  align-content: center;
+  border-radius: 25px;
+}
+
+.img-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.dropbtn {
+  background-color: white;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  min-width: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 5px 13px;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+}
+
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a span {
+  margin-left: 10px;
+  align-self: center;
+}
