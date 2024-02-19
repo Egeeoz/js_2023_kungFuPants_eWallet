@@ -1,5 +1,6 @@
 import "../abstracts/textInput.scss";
 import { useState } from "react";
+import Dropdown from "./DropDownInput";
 
 type InputData = {
   cardNumber: string;
@@ -8,7 +9,7 @@ type InputData = {
   ccv: string;
 };
 
-const TextInput = () => {
+const TextInput: React.FC = () => {
   const [inputData, setInputData] = useState<InputData>({
     cardNumber: "",
     cardHolderName: "",
@@ -26,11 +27,19 @@ const TextInput = () => {
     // creditCardData.push(inputData);
   };
   // const creditCardData = [{inputData,vendorChoice}]; var vi vill pusha in våra obj
+
   return (
-    <form className="form">
+    <form
+      className="form"
+      onSubmit={(e) => {
+        console.log(e);
+        debugger;
+      }}
+    >
       <label>
         CARD NUMBER
         <input
+          required
           type="text"
           name="cardNumber"
           value={inputData.cardNumber}
@@ -42,6 +51,7 @@ const TextInput = () => {
       <label>
         CARDHOLDER NAME
         <input
+          required
           type="text"
           placeholder="FIRSTNAME LASTNAME"
           name="cardHolderName"
@@ -53,6 +63,7 @@ const TextInput = () => {
         <label>
           Valid Thru
           <input
+            required
             className="small-input"
             type="text"
             name="validThru"
@@ -63,6 +74,7 @@ const TextInput = () => {
         <label>
           CCV
           <input
+            required
             className="small-input"
             type="text"
             name="ccv"
@@ -71,6 +83,8 @@ const TextInput = () => {
           />
         </label>
       </div>
+      <Dropdown />
+      <button type="submit">submit</button>
     </form>
   );
 };

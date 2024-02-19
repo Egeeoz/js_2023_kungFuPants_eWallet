@@ -1,7 +1,7 @@
 @use "./variables" as *;
 .dropdown-container {
   min-width: 400px;
-  justify-content: center;
+  // justify-content: center;
   margin: 0 auto;
 }
 
@@ -17,10 +17,10 @@
   font-weight: 400;
   font-family: $text-font;
   color: rgba(0, 0, 0, 0.8);
+  margin: 0;
 }
 .img-box {
   display: grid;
-  background-color: blue;
   height: 2rem;
   width: 2rem;
   justify-content: center;
@@ -34,6 +34,7 @@
 }
 
 .dropbtn {
+  margin: 0;
   background-color: white;
   color: black;
   padding: 16px;
@@ -44,7 +45,8 @@
   min-width: 400px;
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .dropdown {

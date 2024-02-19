@@ -2,7 +2,6 @@ import Button from "../Components/Button";
 import Top from "../Components/Top";
 import Card from "../Components/Card";
 import TextInput from "../Components/TextInput";
-import DropDownInput from "../Components/DropDownInput";
 import ButtonLinks from "../constants/ButtonLinks";
 
 const AddCard = () => {
@@ -13,7 +12,6 @@ const AddCard = () => {
       <Top text="Add a new bank card" smalltext="New Card" />
       <Card />
       <TextInput />
-      <DropDownInput />
       {addButton && (
         <Button
           key={addButton.key}
