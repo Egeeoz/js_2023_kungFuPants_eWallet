@@ -21,9 +21,11 @@ const TextInput = () => {
       ...prevState,
       [name]: value,
     }));
-    creditCardData.push(inputData);
+    console.log(inputData);
+
+    // creditCardData.push(inputData);
   };
-  const creditCardData = [inputData];
+  // const creditCardData = [inputData]; var vi vill pusha in våra obj
   return (
     <form className="form">
       <label>

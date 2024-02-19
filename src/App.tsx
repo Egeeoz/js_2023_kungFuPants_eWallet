@@ -1,4 +1,4 @@
-import "./index.scss";
+import "./abstracts/app.scss";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -12,8 +12,8 @@ import AddCard from "./Pages/AddCard";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-        <Route path="/" element={<Home />} />
-        <Route path="/Add" element={<AddCard />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/Add" element={<AddCard />} />
     </Route>
   )
 );
@@ -21,8 +21,7 @@ const router = createBrowserRouter(
 function App() {
   return (
     <>
-    <RouterProvider router={router}>
-    </RouterProvider>
+      <RouterProvider router={router}></RouterProvider>
     </>
   );
 }
