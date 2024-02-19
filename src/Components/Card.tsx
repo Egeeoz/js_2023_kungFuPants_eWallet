@@ -1,4 +1,4 @@
-import "./card.scss";
+import "../abstracts/card.scss"
 import CardLogo from "../assets/bitcoin.png";
 import wifiLogo from "../assets/wifi.png";
 import chipLogo from "../assets/chip.png";
