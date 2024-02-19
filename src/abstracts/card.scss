@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "PT Mono", monospace;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    background:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    display: flex;
+    position: fixed;
+    width: 382px;
+    height: 241px;
+    background-color:rgb(255, 174, 52) ;
+    padding: 20px 30px;
+    border-radius: 8px;
+}
+
+.wifiLogo{
+    position: absolute;
+    top: 15px;
+    width: 44px;
+    height: 44px;
+    opacity: 50%;
+}
+
+.chipLogo{
+    position: absolute;
+    top: 55px;
+    left: 26px;
+    width: 50px;
+    height: 40px;
+}
+
+.cardLogo{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: 
+    rgba(0, 0, 0, 0.7);
+    width: 27.5px;
+    height: 38.5px;
+}
+
+
+.cardNo {
+    position: absolute;
+    top:110px;
+    left: 20px;
+    color: black;
+    width: 350px;
+    height: 42px;
+    font-weight: 400;
+    font-size: 29px;
+    letter-spacing: 3%;
+}
+
+
+.rowTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color:  black;
+    height: 30px;
+    width: 85%;
+    position: absolute;
+    bottom: 30px;
+    font-size: 12px;
+}
+
+.rowInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: black;
+    position: absolute;
+    bottom: 10px;
+    height: 30px;
+    width: 85%; 
+    font-size: 18px;
+}
+
