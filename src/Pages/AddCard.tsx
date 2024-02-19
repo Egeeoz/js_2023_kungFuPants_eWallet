@@ -6,8 +6,7 @@ import DropDownInput from "../Components/DropDownInput";
 import ButtonLinks from "../constants/ButtonLinks";
 
 const AddCard = () => {
-
-  const addButton = ButtonLinks.find((link) => link.key === "addButton")
+  const addButton = ButtonLinks.find((link) => link.key === "addButton");
 
   return (
     <>
@@ -16,7 +15,12 @@ const AddCard = () => {
       <TextInput />
       <DropDownInput />
       {addButton && (
-        <Button key={addButton.key} text={addButton.text} to={addButton.to}/>
+        <Button
+          key={addButton.key}
+          text={addButton.text}
+          to={addButton.to}
+          className="addCardBtn"
+        />
       )}
     </>
   );
