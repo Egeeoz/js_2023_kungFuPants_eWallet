@@ -25,7 +25,7 @@ const TextInput = () => {
 
     // creditCardData.push(inputData);
   };
-  // const creditCardData = [inputData]; var vi vill pusha in våra obj
+  // const creditCardData = [{inputData,vendorChoice}]; var vi vill pusha in våra obj
   return (
     <form className="form">
       <label>
@@ -35,6 +35,7 @@ const TextInput = () => {
           name="cardNumber"
           value={inputData.cardNumber}
           maxLength={16}
+          pattern="[0-9]*"
           onChange={handleInput}
         />
       </label>
