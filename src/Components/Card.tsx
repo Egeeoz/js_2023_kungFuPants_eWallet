@@ -10,7 +10,7 @@ interface CardProps {
   validThru: number;
 }
 
-const Card = ({ logoImg, cardNumber, cardHolder, validThru }) => {
+const Card = ({ logoImg, cardNumber, cardHolder, validThru }: CardProps) => {
   return (
     <div className="card">
       <div className="logoRow">
