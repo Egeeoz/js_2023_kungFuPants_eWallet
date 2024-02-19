@@ -36,6 +36,7 @@ const TextInput = () => {
           value={inputData.cardNumber}
           maxLength={16}
           onChange={handleInput}
+          pattern="[0-9]"
         />
       </label>
       <label>
