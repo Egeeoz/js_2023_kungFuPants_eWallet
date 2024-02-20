@@ -1,19 +1,20 @@
-import "../abstracts/cardstack.scss"
 import Card from "./Card";
-import "../abstracts/cardstack.scss"; // Make sure to import the necessary styles
+import "../abstracts/cardstack.scss";
+import CardLogo from "../assets/bitcoin.png";
+import AnotherCardLogo from "../assets/ninja.png";
 
-const CardStack = () => {
-  const dynamicStyles = () => {
-    return {
-      marginBottom: `-10rem`,
-    };
-  };
-
+function CardStack() {
   return (
     <div className="card-list-container">
       {[1, 2, 3].map((index) => (
-        <div className="card-list" key={index} style={dynamicStyles()}>
-          CARD {index}
+        <div className="card-list" key={index} style={{ marginBottom: `-250px` }}>
+          <Card
+            logoImg={index === 3 ? AnotherCardLogo : CardLogo}
+            cardNumber="1111222233334444"
+            cardHolder="active"
+            validThru="01 / 24"
+            backGroundColor={index === 3 ? "green" : "rgba(208, 208, 208, 1)"}
+          />
         </div>
       ))}
     </div>
