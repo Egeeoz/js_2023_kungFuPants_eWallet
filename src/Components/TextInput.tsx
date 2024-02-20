@@ -1,6 +1,7 @@
 import "../abstracts/textInput.scss";
 import { useState } from "react";
-
+import Dropdown from "./DropDownInput";
+import "../abstracts/button.scss";
 type InputData = {
   cardNumber: string;
   cardHolderName: string;
@@ -8,7 +9,7 @@ type InputData = {
   ccv: string;
 };
 
-const TextInput = () => {
+const TextInput: React.FC = () => {
   const [inputData, setInputData] = useState<InputData>({
     cardNumber: "",
     cardHolderName: "",
@@ -25,16 +26,25 @@ const TextInput = () => {
 
     // creditCardData.push(inputData);
   };
-  // const creditCardData = [inputData]; var vi vill pusha in våra obj
+  // const creditCardData = [{inputData,vendorChoice}]; var vi vill pusha in våra obj
+
   return (
-    <form className="form">
+    <form
+      className="form"
+      onSubmit={(e) => {
+        console.log(e);
+        debugger;
+      }}
+    >
       <label>
         CARD NUMBER
         <input
+          required
           type="text"
           name="cardNumber"
           value={inputData.cardNumber}
           maxLength={16}
+          pattern="[0-9]*"
           onChange={handleInput}
           pattern="[0-9]"
         />
@@ -42,10 +52,12 @@ const TextInput = () => {
       <label>
         CARDHOLDER NAME
         <input
+          required
           type="text"
           placeholder="FIRSTNAME LASTNAME"
           name="cardHolderName"
           value={inputData.cardHolderName}
+          pattern="[A-Za-z ]+"
           onChange={handleInput}
         />
       </label>
@@ -53,9 +65,12 @@ const TextInput = () => {
         <label>
           Valid Thru
           <input
+            required
             className="small-input"
             type="text"
             name="validThru"
+            maxLength={4}
+            pattern="[0-9]*"
             value={inputData.validThru}
             onChange={handleInput}
           />
@@ -63,14 +78,21 @@ const TextInput = () => {
         <label>
           CCV
           <input
+            required
             className="small-input"
             type="text"
             name="ccv"
+            pattern="[0-9]*"
+            maxLength={3}
             value={inputData.ccv}
             onChange={handleInput}
           />
         </label>
       </div>
+      <Dropdown />
+      <button className="addCardBtn" type="submit">
+        ADD CARD
+      </button>
     </form>
   );
 };
