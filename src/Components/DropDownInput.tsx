@@ -91,6 +91,7 @@ const Dropdown: React.FC<DropDownProps> = ({ onGetTheSelectedVendor }) => {
   };
 
   const handleVendorChoice = (option: Option) => {
+    onGetTheSelectedVendor(option);
     setSelectedOption(option);
     setIsActive(false);
   };

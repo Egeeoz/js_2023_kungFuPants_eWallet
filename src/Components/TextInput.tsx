@@ -27,8 +27,13 @@ const TextInput: React.FC = () => {
     // creditCardData.push(inputData);
   };
   // const creditCardData = [{inputData,vendorChoice}]; var vi vill pusha in våra obj
-  const getTheSelectedVendor = (obj: Option) => {
-    console.log(obj);
+  const getTheSelectedVendor = (vendorobj: Option) => {
+    const allMyCardData = {
+      inputData,
+      vendorobj,
+    };
+    console.log(allMyCardData);
+    return allMyCardData;
   };
   return (
     <form
