@@ -1,6 +1,8 @@
 @use "./variables" as *;
 
 .linkBtn {
+  display: inline-blockgit ;
+  margin-top: 10px;
   background-color: #eeeeee;
   border-style: solid;
   border-width: 3px;
