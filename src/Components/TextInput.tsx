@@ -27,22 +27,29 @@ const TextInput: React.FC = () => {
     // creditCardData.push(inputData);
   };
   // const creditCardData = [{inputData,vendorChoice}]; var vi vill pusha in våra obj
-  const getTheSelectedVendor = (vendorobj: Option) => {
+
+  const getTheSelectedVendor = (vendorobj: any) => {
     const allMyCardData = {
-      inputData,
-      vendorobj,
+      cardHolderName: inputData.cardHolderName,
+      cardNumber: inputData.cardNumber,
+      ccv: inputData.ccv,
+      validThru: inputData.validThru,
+      vendorImg: vendorobj.icon,
+      vendorName: vendorobj.text,
+      vendorBackgroundColor: vendorobj.backgroundColor,
+      vendorCardTextColor: vendorobj.cardTextColor,
     };
     console.log(allMyCardData);
     return allMyCardData;
   };
+  const handleSubmit = () => {
+    console.log(getTheSelectedVendor);
+    debugger;
+    localStorage.setItem("formData", JSON.stringify(getTheSelectedVendor));
+    // Redirect to another page or perform any other action
+  };
   return (
-    <form
-      className="form"
-      onSubmit={(e) => {
-        console.log(e);
-        debugger;
-      }}
-    >
+    <form className="form" onSubmit={handleSubmit}>
       <label>
         CARD NUMBER
         <input
