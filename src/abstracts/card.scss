@@ -1,95 +1,89 @@
 @use "./variables" as *;
 
-.card{
-    display: flex;
-    position: relative;
-    margin-bottom: 3rem;
-    min-width: 400px;
-    height: 241px;
-    background-color:rgba(255, 174, 52, 1);
-    padding: 20px 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 16px 0px #0000001F;
-    
+.card {
+  display: flex;
+  position: relative;
+  margin-bottom: 3rem;
+  min-width: 400px;
+  height: 241px;
+  background-color: rgba(208, 208, 208, 1);
+  padding: 20px 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 16px 0px #0000001f;
 }
 
-.wifiLogo{
-    position: absolute;
-    top: 20px;
-    left: 24px;
-    width: 44px;
-    height: 44px;
-    opacity: 50%;
+.wifiLogo {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  width: 44px;
+  height: 44px;
+  opacity: 50%;
 }
 
-.chipLogo{
-    position: absolute;
-    top: 65px;
-    left: 20px;
-    width: 50px;
-    height: 40px;
+.chipLogo {
+  position: absolute;
+  top: 65px;
+  left: 20px;
+  width: 50px;
+  height: 40px;
 }
 
-.cardLogo{
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    color: 
-    rgba(0, 0, 0, 0.7);
-    width: 27.5px;
-    height: 38.5px;
+.cardLogo {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: rgba(0, 0, 0, 0.7);
+  width: 27.5px;
+  height: 38.5px;
 }
 
-
-.cardNo{
-    position: relative;
-    top:110px;
-    width: 100%;
-    height: 42px;
+.cardNo {
+  position: relative;
+  top: 110px;
+  width: 100%;
+  height: 42px;
 }
 
-.cardNumber{
-    /* font-family:"PT Mono", monospace; */
-    margin: 0 auto;
-    color: rgb(0, 0, 0);
-    width: 385px;
-    height: 42px;
-    font-weight: 400;
-    font-size: 29px;
-    position: absolute;
-    display: flex;
-    letter-spacing: 1.5px;
-    
+.cardNumber {
+  /* font-family:"PT Mono", monospace; */
+  margin: 0 auto;
+  color: rgb(0, 0, 0);
+  width: 385px;
+  height: 42px;
+  font-weight: 400;
+  font-size: 29px;
+  position: absolute;
+  display: flex;
+  letter-spacing: 1.5px;
 }
 
-
-.titleRow{
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    position: absolute;
-    bottom: 40px;
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  position: absolute;
+  bottom: 40px;
 }
 
-.titleText{
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.8);   
+.titleText {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.8);
 }
 
-.infoRow{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    position: absolute;
-    bottom: 10px;
-    height: 30px;
-    width: 90%; 
+.infoRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 10px;
+  height: 30px;
+  width: 90%;
 }
 
-.holderName, .validThru{
-    font-size: 18px;
-    color: black;
+.holderName,
+.validThru {
+  font-size: 18px;
+  color: black;
 }
-
-
