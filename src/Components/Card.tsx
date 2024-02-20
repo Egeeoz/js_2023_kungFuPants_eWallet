@@ -44,6 +44,7 @@ const createCard = ({
   );
 };
 
+
 const Card = (props: CardProps) => {
   return <>{createCard(props)}</>;
 };

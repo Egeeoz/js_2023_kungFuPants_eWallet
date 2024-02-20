@@ -1,3 +1,4 @@
+import "../abstracts/cardstack.scss"
 import Card from "./Card";
 import "../abstracts/cardstack.scss";
 import CardLogo from "../assets/bitcoin.png";
@@ -10,7 +11,7 @@ function CardStack() {
         <div className="card-list" key={index} style={{ marginBottom: `-250px` }}>
           <Card
             logoImg={index === 3 ? AnotherCardLogo : CardLogo}
-            cardNumber="1111222233334444"
+            cardNumber="12345678"
             cardHolder="active"
             validThru="01 / 24"
             backGroundColor={index === 3 ? "green" : "rgba(208, 208, 208, 1)"}
