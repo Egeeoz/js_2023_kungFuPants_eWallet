@@ -17,6 +17,7 @@ interface Option {
 interface DropDownProps {
   onGetTheSelectedVendor: (obj: Option) => void;
 }
+
 const Dropdown: React.FC<DropDownProps> = ({ onGetTheSelectedVendor }) => {
   const [isActive, setIsActive] = useState(false);
   const [selectedOption, setSelectedOption] = useState({
