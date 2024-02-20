@@ -1,7 +1,7 @@
 import "../abstracts/textInput.scss";
 import { useState } from "react";
 import Dropdown from "./DropDownInput";
-
+import "../abstracts/button.scss";
 type InputData = {
   cardNumber: string;
   cardHolderName: string;
@@ -56,6 +56,7 @@ const TextInput: React.FC = () => {
           placeholder="FIRSTNAME LASTNAME"
           name="cardHolderName"
           value={inputData.cardHolderName}
+          pattern="[A-Z]*"
           onChange={handleInput}
         />
       </label>
@@ -84,7 +85,9 @@ const TextInput: React.FC = () => {
         </label>
       </div>
       <Dropdown />
-      <button type="submit">submit</button>
+      <button className="addCardBtn" type="submit">
+        submit
+      </button>
     </form>
   );
 };

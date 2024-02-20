@@ -12,14 +12,6 @@ const AddCard = () => {
       <Top text="Add a new bank card" smalltext="New Card" />
       <Card />
       <TextInput />
-      {addButton && (
-        <Button
-          key={addButton.key}
-          text={addButton.text}
-          to={addButton.to}
-          className="addCardBtn"
-        />
-      )}
     </>
   );
 };
