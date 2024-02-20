@@ -53,6 +53,7 @@ const TextInput: React.FC = () => {
           maxLength={16}
           pattern="[0-9]*"
           onChange={handleInput}
+          pattern="[0-9]"
         />
       </label>
       <label>
