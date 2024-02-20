@@ -56,7 +56,7 @@ const TextInput: React.FC = () => {
           placeholder="FIRSTNAME LASTNAME"
           name="cardHolderName"
           value={inputData.cardHolderName}
-          pattern="[A-Z]*"
+          pattern="[A-Za-z ]+"
           onChange={handleInput}
         />
       </label>
@@ -68,6 +68,8 @@ const TextInput: React.FC = () => {
             className="small-input"
             type="text"
             name="validThru"
+            maxLength={4}
+            pattern="[0-9]*"
             value={inputData.validThru}
             onChange={handleInput}
           />
@@ -79,6 +81,8 @@ const TextInput: React.FC = () => {
             className="small-input"
             type="text"
             name="ccv"
+            pattern="[0-9]*"
+            maxLength={3}
             value={inputData.ccv}
             onChange={handleInput}
           />
