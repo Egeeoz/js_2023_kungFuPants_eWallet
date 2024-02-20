@@ -56,7 +56,7 @@ const TextInput: React.FC = () => {
           placeholder="FIRSTNAME LASTNAME"
           name="cardHolderName"
           value={inputData.cardHolderName}
-          pattern="[A-Z]*"
+          //pattern="[A-Z]*"
           onChange={handleInput}
         />
       </label>
