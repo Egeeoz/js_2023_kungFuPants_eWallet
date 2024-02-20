@@ -1,0 +1,7 @@
+@use "./variables" as *;
+
+.deleteIcon {
+  width: 24px;
+  height: 24px;
+  background-image: url(../assets/bin.png);
+}
