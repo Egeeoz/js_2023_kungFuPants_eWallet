@@ -27,7 +27,9 @@ const TextInput: React.FC = () => {
     // creditCardData.push(inputData);
   };
   // const creditCardData = [{inputData,vendorChoice}]; var vi vill pusha in våra obj
-
+  const getTheSelectedVendor = (obj: Option) => {
+    console.log(obj);
+  };
   return (
     <form
       className="form"
@@ -88,7 +90,7 @@ const TextInput: React.FC = () => {
           />
         </label>
       </div>
-      <Dropdown />
+      <Dropdown onGetTheSelectedVendor={getTheSelectedVendor} />
       <button className="addCardBtn" type="submit">
         ADD CARD
       </button>
