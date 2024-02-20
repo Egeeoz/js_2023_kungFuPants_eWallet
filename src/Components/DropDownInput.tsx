@@ -5,6 +5,7 @@ import bitcoin from "../assets/bitcoin.png";
 import ninja from "../assets/ninja.png";
 import evil from "../assets/evil.png";
 import chain from "../assets/chain.png";
+import whiteImg from "../assets/white.icon.jpg";
 
 interface Option {
   icon: string;
@@ -15,7 +16,7 @@ interface Option {
 const Dropdown: React.FC = () => {
   const [isActive, setIsActive] = useState(false);
   const [selectedOption, setSelectedOption] = useState({
-    icon: "",
+    icon: whiteImg,
     text: "",
     color: "",
   });
