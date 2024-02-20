@@ -13,7 +13,7 @@ interface CardProps {
 const createCard = () => {
   const creditCard = (
     <>
-      <div className="card">
+      <div /*style={backgroundColor}*/ className="card">
         <div className="logoRow">
           <img className="wifiLogo" src={wifiLogo} />
           <img className="chipLogo" src={chipLogo} />
