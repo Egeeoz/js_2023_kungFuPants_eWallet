@@ -86,7 +86,7 @@ const TextInput: React.FC = () => {
       </div>
       <Dropdown />
       <button className="addCardBtn" type="submit">
-        submit
+        ADD CARD
       </button>
     </form>
   );
