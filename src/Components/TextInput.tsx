@@ -2,6 +2,7 @@ import "../abstracts/textInput.scss";
 import { useState } from "react";
 import Dropdown from "./DropDownInput";
 import "../abstracts/button.scss";
+
 type InputData = {
   cardNumber: string;
   cardHolderName: string;
@@ -16,38 +17,36 @@ const TextInput: React.FC = () => {
     validThru: "",
     ccv: "",
   });
+  const [selectedVendor, setSelectedVendor] = useState<any | null>(null);
+
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setInputData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
-    console.log(inputData);
-
-    // creditCardData.push(inputData);
   };
-  // const creditCardData = [{inputData,vendorChoice}]; var vi vill pusha in våra obj
 
-  const getTheSelectedVendor = (vendorobj: any) => {
-    const allMyCardData = {
-      cardHolderName: inputData.cardHolderName,
-      cardNumber: inputData.cardNumber,
-      ccv: inputData.ccv,
-      validThru: inputData.validThru,
-      vendorImg: vendorobj.icon,
-      vendorName: vendorobj.text,
-      vendorBackgroundColor: vendorobj.backgroundColor,
-      vendorCardTextColor: vendorobj.cardTextColor,
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!selectedVendor) {
+      console.error("Please select a vendor.");
+      return;
+    }
+
+    const formData = {
+      ...inputData,
+      vendor: selectedVendor,
     };
-    console.log(allMyCardData);
-    return allMyCardData;
-  };
-  const handleSubmit = () => {
-    console.log(getTheSelectedVendor);
-    debugger;
-    localStorage.setItem("formData", JSON.stringify(getTheSelectedVendor));
+
+    localStorage.setItem("formData", JSON.stringify(formData));
     // Redirect to another page or perform any other action
   };
+
+  const handleVendorSelection = (vendor: any) => {
+    setSelectedVendor(vendor);
+  };
+
   return (
     <form className="form" onSubmit={handleSubmit}>
       <label>
@@ -102,7 +101,7 @@ const TextInput: React.FC = () => {
           />
         </label>
       </div>
-      <Dropdown onGetTheSelectedVendor={getTheSelectedVendor} />
+      <Dropdown onGetTheSelectedVendor={handleVendorSelection} />
       <button className="addCardBtn" type="submit">
         ADD CARD
       </button>
