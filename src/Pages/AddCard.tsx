@@ -1,8 +1,8 @@
 import Top from "../Components/Top";
-import Card from "../Components/Card";
 import TextInput from "../Components/TextInput";
 import { Link } from "react-router-dom";
 import "../abstracts/linkBtn.scss";
+
 const AddCard = () => {
   return (
     <>
@@ -10,7 +10,7 @@ const AddCard = () => {
         Home
       </Link>
       <Top text="Add a new bank card" smalltext="New Card" />
-      <Card />
+      {/* <Card/> */}
       <TextInput />
     </>
   );
