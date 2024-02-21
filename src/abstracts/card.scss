@@ -6,10 +6,23 @@
   margin-bottom: 3rem;
   min-width: 400px;
   height: 241px;
-  background-color: rgba(208, 208, 208, 1);
+  background-color: $defualt-card;
   padding: 20px 20px;
   border-radius: 8px;
   box-shadow: 0px 0px 16px 0px #0000001f;
+
+  &.bitcoin {
+    background-color: $bitcoin-cardColor;
+  }
+  &.chain {
+    background-color: $block-cardColor;
+  }
+  &.evil {
+    background-color: $evil-cardColor;
+  }
+  &.ninja {
+    background-color: $ninja-cardColor;
+  }
 }
 
 .wifiLogo {
@@ -36,6 +49,21 @@
   color: rgba(0, 0, 0, 0.7);
   width: 27.5px;
   height: 38.5px;
+
+  &.bitcoin {
+    background: url('../assets/bitcoin.png')
+  }
+
+  &.chain {
+    background: url('../assets/chain.png')
+  }
+  &.evil {
+    background: url('../assets/evil.png')
+  }
+  &.ninja {
+    background: url('../assets/ninja.png')
+  }
+
 }
 
 .cardNo {
@@ -56,6 +84,10 @@
   position: absolute;
   display: flex;
   letter-spacing: 1.5px;
+
+  &.ninja{
+    color: white;
+  }
 }
 
 .titleRow {
@@ -69,6 +101,9 @@
 .titleText {
   font-size: 12px;
   color: rgba(0, 0, 0, 0.8);
+  &.ninja{
+    color: white;
+  }
 }
 
 .infoRow {
@@ -86,4 +121,7 @@
 .validThru {
   font-size: 18px;
   color: black;
+  &.ninja{
+    color: white;
+  }
 }

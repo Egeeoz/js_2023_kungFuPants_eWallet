@@ -20,7 +20,7 @@ const TextInput: React.FC = () => {
   const [selectedVendor, setSelectedVendor] = useState<any | null>(null);
   const [cards, setCards] = useState<any[]>([]); // Array to hold card objects
 
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setInputData((prevState) => ({
       ...prevState,
