@@ -1,10 +1,6 @@
 import "../abstracts/dropdown.scss";
 import "../abstracts/_variables.scss";
 import React, { useState } from "react";
-import bitcoin from "../assets/bitcoin.png";
-import ninja from "../assets/ninja.png";
-import evil from "../assets/evil.png";
-import chain from "../assets/chain.png";
 import whiteImg from "../assets/white.icon.jpg";
 import options from "../constants/DropDownOption";
 

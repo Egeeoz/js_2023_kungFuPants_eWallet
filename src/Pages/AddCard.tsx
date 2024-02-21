@@ -7,7 +7,7 @@ const AddCard = () => {
   return (
     <>
       <Link className="homeIcon" to="/">
-        <img src={homeIcon} alt="Home Icon" width="30px" />
+        <img src={homeIcon} alt="Home Icon" width="32px" />
       </Link>
       <Top text="Add a new bank card" smalltext="New Card" />
 
