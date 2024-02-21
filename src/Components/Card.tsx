@@ -6,18 +6,28 @@ import CardLogo from "../assets/bitcoin.png";
 import "../abstracts/card.scss";
 
 interface CardProps {
-  logoImg: string;
+  // logoImg: string;
   cardNumber: string;
   cardHolderName: string;
   validThru: string;
   vendor: {
     backgroundColor: string;
     icon: string;
+    color: string;
   };
 }
 
-const CardList: React.FC = () => {
-  const [latestCard, setLatestCard] = useState<CardProps | null>(null);
+const CardList: React.FC<CardProps> = () => {
+  const [latestCard, setLatestCard] = useState({
+    cardNumber: "XXXX XXXX XXXX XXXX",
+    cardHolderName: "FIRSTNAME LASTNAME",
+    validThru: "MM/YY",
+    vendor: {
+      backgroundColor: "rgba(208, 208, 208, 1,)",
+      icon: CardLogo,
+      color: "rgba(0,0,0,1)",
+    },
+  });
 
   useEffect(() => {
     const storedCards = localStorage.getItem("cards");
@@ -33,35 +43,49 @@ const CardList: React.FC = () => {
     cardNumber = "XXXX XXXX XXXX XXXX",
     cardHolderName = "FIRSTNAME LASTNAME",
     validThru = "MM/YY",
-    vendor: { backgroundColor, icon } = { backgroundColor: "rgba(208, 208, 208, 1)", icon: "" },
+    vendor: { backgroundColor, icon, color } = {
+      backgroundColor: "rgba(208, 208, 208, 1)",
+      icon: "",
+      color: "rgba(0,0,0,1)",
+    },
   }: CardProps) => {
-   
     return (
-      <div style={{ backgroundColor }} className="card">
+      <div
+        style={{ backgroundColor: backgroundColor, color: color }}
+        className="card"
+      >
         <div className="logoRow">
           <img className="wifiLogo" src={wifiLogo} alt="Wifi Logo" />
           <img className="chipLogo" src={chipLogo} alt="Chip Logo" />
           <img className="cardLogo" src={icon} alt="Card Logo" />
         </div>
         <div className="cardNo">
-          <p className="cardNumber">{cardNumber}</p>
+          <p style={{ color: color }} className="cardNumber">
+            {cardNumber}
+          </p>
         </div>
         <div className="titleRow">
-          <p className="titleText">CARDHOLDER NAME</p>
-          <p className="titleText">VALID THRU</p>
+          <p style={{ color: color }} className="titleText">
+            CARDHOLDER NAME
+          </p>
+          <p style={{ color: color }} className="titleText">
+            VALID THRU
+          </p>
         </div>
-        <div className="infoRow">
-          <p className="holderName">{cardHolderName}</p>
-          <p className="validThru">{validThru}</p>
+        <div style={{ color: color }} className="infoRow">
+          <p style={{ color: color }} className="holderName">
+            {cardHolderName}
+          </p>
+          <p style={{ color: color }} className="validThru">
+            {validThru}
+          </p>
         </div>
       </div>
     );
   };
 
   return (
-    <div className="card-list">
-      {latestCard && createCard(latestCard)}
-    </div>
+    <div className="card-list">{latestCard && createCard(latestCard)}</div>
   );
 };
 

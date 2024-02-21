@@ -11,7 +11,7 @@ interface Option {
   icon: string;
   text: string;
   backgroundColor: string;
-  cardTextColor: string;
+  color: string;
 }
 
 interface DropDownProps {
@@ -24,7 +24,7 @@ const Dropdown: React.FC<DropDownProps> = ({ onGetTheSelectedVendor }) => {
     icon: whiteImg,
     text: "",
     backgroundColor: "",
-    cardTextColor: "",
+    color: "",
   });
 
   const options: Option[] = [
@@ -32,25 +32,25 @@ const Dropdown: React.FC<DropDownProps> = ({ onGetTheSelectedVendor }) => {
       icon: bitcoin,
       text: "BITCOIN INC",
       backgroundColor: "rgba(255, 174, 52, 1)",
-      cardTextColor: "rgba(0, 0, 0, 1)",
+      color: "rgba(0, 0, 0, 1)",
     },
     {
       icon: ninja,
       text: "NINJA BANK",
       backgroundColor: "rgba(34, 34, 34, 1)",
-      cardTextColor: "rgba(255, 255, 255, 1)",
+      color: "rgba(255, 255, 255, 1)",
     },
     {
       icon: chain,
       text: "BLOCK CHAIN INC",
       backgroundColor: "rgba(139, 88, 249, 1)",
-      cardTextColor: "rgba(255, 255, 255, 1)",
+      color: "rgba(255, 255, 255, 1)",
     },
     {
       icon: evil,
       text: "EVIL CORP",
       backgroundColor: "rgba(243, 51, 85, 1)",
-      cardTextColor: "rgba(255, 255, 255, 1)",
+      color: "rgba(255, 255, 255, 1)",
     },
   ];
   const getVendorSelection = (option: Option) => {
