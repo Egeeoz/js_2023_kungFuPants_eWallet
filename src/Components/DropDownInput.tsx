@@ -11,16 +11,20 @@ interface Option {
   icon: string;
   text: string;
   backgroundColor: string;
-  cardTextColor: string;
+  color: string;
 }
 
-const Dropdown: React.FC = () => {
+interface DropDownProps {
+  onGetTheSelectedVendor: (obj: Option) => void;
+}
+
+const Dropdown: React.FC<DropDownProps> = ({ onGetTheSelectedVendor }) => {
   const [isActive, setIsActive] = useState(false);
   const [selectedOption, setSelectedOption] = useState({
     icon: whiteImg,
     text: "",
     backgroundColor: "",
-    cardTextColor: "",
+    color: "",
   });
 
   const options: Option[] = [
@@ -28,25 +32,25 @@ const Dropdown: React.FC = () => {
       icon: bitcoin,
       text: "BITCOIN INC",
       backgroundColor: "rgba(255, 174, 52, 1)",
-      cardTextColor: "rgba(0, 0, 0, 1)",
+      color: "rgba(0, 0, 0, 1)",
     },
     {
       icon: ninja,
       text: "NINJA BANK",
       backgroundColor: "rgba(34, 34, 34, 1)",
-      cardTextColor: "rgba(255, 255, 255, 1)",
+      color: "rgba(255, 255, 255, 1)",
     },
     {
       icon: chain,
       text: "BLOCK CHAIN INC",
       backgroundColor: "rgba(139, 88, 249, 1)",
-      cardTextColor: "rgba(255, 255, 255, 1)",
+      color: "rgba(255, 255, 255, 1)",
     },
     {
       icon: evil,
       text: "EVIL CORP",
       backgroundColor: "rgba(243, 51, 85, 1)",
-      cardTextColor: "rgba(255, 255, 255, 1)",
+      color: "rgba(255, 255, 255, 1)",
     },
   ];
   const getVendorSelection = (option: Option) => {
@@ -88,6 +92,7 @@ const Dropdown: React.FC = () => {
   };
 
   const handleVendorChoice = (option: Option) => {
+    onGetTheSelectedVendor(option);
     setSelectedOption(option);
     setIsActive(false);
   };

@@ -2,6 +2,7 @@ import "../abstracts/textInput.scss";
 import { useState } from "react";
 import Dropdown from "./DropDownInput";
 import "../abstracts/button.scss";
+
 type InputData = {
   cardNumber: string;
   cardHolderName: string;
@@ -16,26 +17,41 @@ const TextInput: React.FC = () => {
     validThru: "",
     ccv: "",
   });
+  const [selectedVendor, setSelectedVendor] = useState<any | null>(null);
+  const [cards, setCards] = useState<any[]>([]); // Array to hold card objects
+
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setInputData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
-    console.log(inputData);
-
-    // creditCardData.push(inputData);
   };
-  // const creditCardData = [{inputData,vendorChoice}]; var vi vill pusha in våra obj
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!selectedVendor) {
+      console.error("Please select a vendor.");
+      return;
+    }
+
+    const newCard = {
+      ...inputData,
+      vendor: selectedVendor,
+    };
+
+    const updatedCards = [...cards, newCard]; // Add the new card to the array
+    setCards(updatedCards);
+    localStorage.setItem("cards", JSON.stringify(updatedCards));
+    // Redirect to another page or perform any other action
+  };
+
+  const handleVendorSelection = (vendor: any) => {
+    setSelectedVendor(vendor);
+  };
 
   return (
-    <form
-      className="form"
-      onSubmit={(e) => {
-        console.log(e);
-        debugger;
-      }}
-    >
+    <form className="form" onSubmit={handleSubmit}>
       <label>
         CARD NUMBER
         <input
@@ -46,7 +62,6 @@ const TextInput: React.FC = () => {
           maxLength={16}
           pattern="[0-9]*"
           onChange={handleInput}
-          pattern="[0-9]"
         />
       </label>
       <label>
@@ -89,7 +104,7 @@ const TextInput: React.FC = () => {
           />
         </label>
       </div>
-      <Dropdown />
+      <Dropdown onGetTheSelectedVendor={handleVendorSelection} />
       <button className="addCardBtn" type="submit">
         ADD CARD
       </button>
