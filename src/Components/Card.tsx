@@ -11,6 +11,7 @@ const CardList: React.FC<CardProps> = ({
   validThru,
   vendor,
 }) => {
+  console.log(vendor);
   return (
     <div className={`card ${vendor}`}>
       <div className="logoRow">

@@ -8,6 +8,7 @@ import chain from "../assets/chain.png";
 import whiteImg from "../assets/white.icon.jpg";
 
 interface Option {
+  vendor: string;
   icon: string;
   text: string;
   backgroundColor: string;
@@ -22,6 +23,7 @@ const Dropdown: React.FC<DropDownProps> = ({ onGetTheSelectedVendor }) => {
   const [isActive, setIsActive] = useState(false);
   const [selectedOption, setSelectedOption] = useState({
     icon: whiteImg,
+    vendor: "default",
     text: "",
     backgroundColor: "",
     color: "",
@@ -29,24 +31,28 @@ const Dropdown: React.FC<DropDownProps> = ({ onGetTheSelectedVendor }) => {
 
   const options: Option[] = [
     {
+      vendor: "bitcoin",
       icon: bitcoin,
       text: "BITCOIN INC",
       backgroundColor: "rgba(255, 174, 52, 1)",
       color: "rgba(0, 0, 0, 1)",
     },
     {
+      vendor: "ninja",
       icon: ninja,
       text: "NINJA BANK",
       backgroundColor: "rgba(34, 34, 34, 1)",
       color: "rgba(255, 255, 255, 1)",
     },
     {
+      vendor: "chain",
       icon: chain,
       text: "BLOCK CHAIN INC",
       backgroundColor: "rgba(139, 88, 249, 1)",
       color: "rgba(255, 255, 255, 1)",
     },
     {
+      vendor: "evil",
       icon: evil,
       text: "EVIL CORP",
       backgroundColor: "rgba(243, 51, 85, 1)",
