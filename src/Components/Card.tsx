@@ -15,7 +15,7 @@ const CardList: React.FC<CardProps> = ({
   return (
     <div className={`card ${vendor}`}>
       <div className="logoRow">
-        <img className="wifiLogo" src={wifiLogo} alt="Wifi Logo" />
+        <img className={`wifiLogo ${vendor}`} src={wifiLogo} alt="Wifi Logo" />
         <img className="chipLogo" src={chipLogo} alt="Chip Logo" />
         <div className={`cardLogo ${vendor}`} />
       </div>
@@ -30,7 +30,9 @@ const CardList: React.FC<CardProps> = ({
       </div>
       <div className="infoRow">
         <p className={`holderName ${vendor}`}>{cardHolderName}</p>
-        <p className={`validThru ${vendor}`}>{validThru}</p>
+        <p className={`validThru ${vendor}`}>
+          {validThru.replace(/.{2}(?=.)/, "$&/")}
+        </p>
       </div>
     </div>
   );

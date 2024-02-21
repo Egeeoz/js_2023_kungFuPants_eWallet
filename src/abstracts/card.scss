@@ -33,9 +33,16 @@
   position: absolute;
   top: 20px;
   left: 24px;
+  filter: invert(1);
   width: 44px;
   height: 44px;
-  opacity: 50%;
+  opacity: 80%;
+  &.bitcoin {
+    filter: invert(0);
+  }
+  &.default {
+    filter: invert(0);
+  }
 }
 
 .chipLogo {
@@ -50,7 +57,8 @@
   position: absolute;
   top: 25px;
   right: 25px;
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 80%;
   width: 27.5px;
   height: 38.5px;
 
@@ -60,12 +68,18 @@
 
   &.chain {
     background: url("../assets/chain.png");
+    background-size: contain;
+    background-repeat: no-repeat;
   }
   &.evil {
     background: url("../assets/evil.png");
+    background-size: contain;
+    background-repeat: no-repeat;
   }
   &.ninja {
     background: url("../assets/ninja.png");
+    background-size: contain;
+    background-repeat: no-repeat;
   }
   &.default {
     background: url("../assets/bitcoin.png");
@@ -82,7 +96,7 @@
 // Styling for different information on the card
 .cardNumber {
   margin: 0 auto;
-  color: rgb(0, 0, 0);
+  color: rgba(255, 255, 255, 0.8);
   width: 385px;
   height: 42px;
   font-weight: 400;
@@ -91,8 +105,11 @@
   display: flex;
   letter-spacing: 1.5px;
 
-  &.ninja {
-    color: white;
+  &.bitcoin {
+    color: rgb(0, 0, 0);
+  }
+  &.default {
+    color: rgb(0, 0, 0);
   }
 }
 
@@ -106,9 +123,12 @@
 
 .titleText {
   font-size: 12px;
-  color: rgba(0, 0, 0, 0.8);
-  &.ninja {
-    color: white;
+  color: rgba(255, 255, 255, 0.8);
+  &.bitcoin {
+    color: rgba(0, 0, 0, 1);
+  }
+  &.default {
+    color: rgb(0, 0, 0);
   }
 }
 
@@ -126,8 +146,11 @@
 .holderName,
 .validThru {
   font-size: 18px;
-  color: black;
-  &.ninja {
-    color: white;
+  color: rgba(255, 255, 255, 0.8);
+  &.bitcoin {
+    color: black;
+  }
+  &.default {
+    color: rgb(0, 0, 0);
   }
 }
