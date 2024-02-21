@@ -15,34 +15,34 @@ const deteleIcon = <a className="deleteIcon" href=""></a>;
 const Home = () => {
   const addButton = ButtonLinks.find((link) => link.key === "addNewButton");
   const [cards, setCards] = useState<CardProps[]>(() => {
-    const storedValue = localStorage.getItem(key)
-    return storedValue ? JSON.parse(storedValue) : initialCards
-  })
-  console.log('JSON.stringify(initalCards', JSON.stringify(initialCards));
+    const storedValue = localStorage.getItem(key);
+    return storedValue ? JSON.parse(storedValue) : initialCards;
+  });
+  console.log("JSON.stringify(initalCards", JSON.stringify(initialCards));
   const [activeCard, setActiveCard] = useState<CardProps | undefined>(() => {
     const storedValue = localStorage.getItem(key);
-    const parsedValue: CardProps[] = storedValue && JSON.parse(storedValue)
-    return parsedValue ? parsedValue.find(card => card.active === true) : undefined;
-  })
+    const parsedValue: CardProps[] = storedValue && JSON.parse(storedValue);
+    return parsedValue
+      ? parsedValue.find((card) => card.active === true)
+      : undefined;
+  });
 
   const setNewActiveCard = (cardNumber: string) => {
     setCards((prevCards) => {
-        const updatedCards = prevCards.map(card => ({
-          ...card,
-          active: cardNumber === card.cardNumber
-        }))
-        const newActiveCard = updatedCards.find(card => card.active)
+      const updatedCards = prevCards.map((card) => ({
+        ...card,
+        active: cardNumber === card.cardNumber,
+      }));
+      const newActiveCard = updatedCards.find((card) => card.active);
 
-        setActiveCard(newActiveCard)
-        return updatedCards;
-    })
-  }
+      setActiveCard(newActiveCard);
+      return updatedCards;
+    });
+  };
 
   useEffect(() => {
     localStorage.setItem(key, JSON.stringify(cards));
-  },[cards])
-  
-
+  }, [cards]);
 
   return (
     <>
