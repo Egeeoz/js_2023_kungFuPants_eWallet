@@ -14,12 +14,7 @@ const deteleIcon = <a className="deleteIcon" href=""></a>;
 
 const Home = () => {
   const addButton = ButtonLinks.find((link) => link.key === "addNewButton");
-  const [cards, setCards] = useState<CardProps[]>(() => {
-    const storedValue = localStorage.getItem(key);
-    console.log(storedValue);
-    return storedValue ? JSON.parse(storedValue) : initialCards;
-  });
-  // console.log("JSON.stringify(initalCards", JSON.stringify(initialCards));
+
   const [activeCard, setActiveCard] = useState<CardProps | undefined>(() => {
     const storedValue = localStorage.getItem(key);
     const parsedValue: CardProps[] = storedValue && JSON.parse(storedValue);
@@ -27,6 +22,17 @@ const Home = () => {
       ? parsedValue.find((card) => card.active === true)
       : undefined;
   });
+
+  const [cards, setCards] = useState<CardProps[]>(() => {
+    const storedValue = localStorage.getItem(key);
+    console.log(storedValue);
+    if (storedValue) {
+      return JSON.parse(storedValue);
+    }
+    setActiveCard(initialCards[0]);
+    return initialCards;
+  });
+  // console.log("JSON.stringify(initalCards", JSON.stringify(initialCards));
 
   const setNewActiveCard = (cardNumber: string) => {
     setCards((prevCards) => {
