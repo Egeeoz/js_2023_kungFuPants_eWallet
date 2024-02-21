@@ -45,7 +45,10 @@ const TextInput: React.FC = () => {
     cards.push(newCard);
     console.log(cards); // Add the new card to the array
     // setCards(updatedCards);
-    localStorage.setItem("cards", JSON.stringify(cards));
+    localStorage.setItem(
+      "cards",
+      JSON.stringify(cards.filter((c) => !c.cardNumber.includes("X")))
+    );
     // Redirect to another page or perform any other action
     console.log(e);
   };
