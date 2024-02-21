@@ -18,6 +18,7 @@ const TextInput: React.FC = () => {
     ccv: "",
   });
   const [selectedVendor, setSelectedVendor] = useState<any | null>(null);
+  const [cards, setCards] = useState<any[]>([]); // Array to hold card objects
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -34,12 +35,14 @@ const TextInput: React.FC = () => {
       return;
     }
 
-    const formData = {
+    const newCard = {
       ...inputData,
       vendor: selectedVendor,
     };
 
-    localStorage.setItem("formData", JSON.stringify(formData));
+    const updatedCards = [...cards, newCard]; // Add the new card to the array
+    setCards(updatedCards);
+    localStorage.setItem("cards", JSON.stringify(updatedCards));
     // Redirect to another page or perform any other action
   };
 
