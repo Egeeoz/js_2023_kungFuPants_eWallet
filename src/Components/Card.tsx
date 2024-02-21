@@ -20,7 +20,9 @@ const CardList: React.FC<CardProps> = ({
         <div className={`cardLogo ${vendor}`} />
       </div>
       <div className={`cardNo ${vendor}`}>
-        <p className={`cardNumber ${vendor}`}>{cardNumber}</p>
+        <p className={`cardNumber ${vendor}`}>
+          {cardNumber.replace(/(.{4})/g, "$1 ")}
+        </p>
       </div>
       <div className="titleRow">
         <p className={`titleText ${vendor}`}>CARDHOLDER NAME</p>

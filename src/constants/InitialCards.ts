@@ -2,10 +2,10 @@ import { CardProps } from "../models/CardProps";
 
 export const initialCards: CardProps[] = [
   {
-    cardNumber: "XXXX XXXX XXXX XXXX",
+    cardNumber: "XXXXXXXXXXXXXXXX",
     cardHolderName: "FIRSTNAME LASTNAME",
     validThru: "MM/YY",
     vendor: "default",
-    active: false,
+    active: true,
   },
 ];
