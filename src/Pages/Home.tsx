@@ -3,14 +3,15 @@ import Top from "../Components/Top";
 import Card from "../Components/Card";
 import CardStack from "../Components/CardStack";
 import ButtonLinks from "../constants/ButtonLinks";
-import DeleteIcon from "../Components/DeleteIcon";
+import "../abstracts/deleteIcon.scss";
 
+const deteleIcon = <a className="deleteIcon" href=""></a>;
 const Home = () => {
   const addButton = ButtonLinks.find((link) => link.key === "addNewButton");
 
   return (
     <>
-      <Top text="E-wallet" smalltext="Active card" icon={<DeleteIcon />} />
+      <Top text="E-wallet" smalltext="Active card" icon={deteleIcon} />
       <Card />
       <CardStack />
       {addButton && (
