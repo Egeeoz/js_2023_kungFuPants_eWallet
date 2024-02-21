@@ -5,7 +5,9 @@ import CardStack from "../Components/CardStack";
 import ButtonLinks from "../constants/ButtonLinks";
 import "../abstracts/deleteIcon.scss";
 
+// Thrashcan Icon
 const deteleIcon = <a className="deleteIcon" href=""></a>;
+
 const Home = () => {
   const addButton = ButtonLinks.find((link) => link.key === "addNewButton");
 

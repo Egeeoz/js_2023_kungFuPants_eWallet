@@ -1,5 +1,6 @@
 @use "./variables" as *;
 
+// Card css
 .card {
   display: flex;
   position: relative;
@@ -11,7 +12,7 @@
   border-radius: 8px;
   box-shadow: 0px 0px 16px 0px #0000001f;
 }
-
+// Styles for different logos
 .wifiLogo {
   position: absolute;
   top: 20px;
@@ -45,8 +46,8 @@
   height: 42px;
 }
 
+// Styling for different information on the card
 .cardNumber {
-  /* font-family:"PT Mono", monospace; */
   margin: 0 auto;
   color: rgb(0, 0, 0);
   width: 385px;
