@@ -3,6 +3,7 @@ import "../abstracts/_variables.scss";
 import React, { useState } from "react";
 import whiteImg from "../assets/white.icon.jpg";
 import options from "../constants/DropDownOption";
+import arrowDown from "../assets/arrowDown.png";
 
 interface Option {
   vendor: string;
@@ -55,7 +56,7 @@ const Dropdown: React.FC<DropDownProps> = ({ onGetTheSelectedVendor }) => {
           </div>
           <span>{selectedOption.text}</span>
 
-          <span>&#9660;</span>
+          <img src={arrowDown} alt="Drop down arrow" />
         </button>
       </>
     );
