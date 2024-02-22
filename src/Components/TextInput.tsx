@@ -10,7 +10,6 @@ type InputData = {
   cardHolderName: string;
   validThru: string;
   ccv: string;
-  // vendor?: any;
 };
 
 const TextInput: React.FC = () => {
@@ -56,14 +55,8 @@ const TextInput: React.FC = () => {
       JSON.stringify(cards.filter((c) => !c.cardNumber.includes("X")))
     );
 
-    // Hide notification after 3 seconds
-    // setTimeout(() => {
-    //   setShowNotification(false);
-    // }, 3000);
-
     setShowNotification(true);
-    // Redirect to another page or perform any other action
-    console.log(e);
+
     setTimeout(function () {
       setShowNotification(false);
       window.location.reload();
@@ -76,6 +69,7 @@ const TextInput: React.FC = () => {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
+      {/* Conditional rendering for notification */}
       <div className={`notification ${showNotification ? "show" : ""}`}>
         Card has been successfully added.
       </div>

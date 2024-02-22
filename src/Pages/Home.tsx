@@ -8,15 +8,15 @@ import { useEffect, useState } from "react";
 import { CardProps } from "../models/CardProps";
 import { key } from "../constants/LocalStorageKey";
 import { initialCards } from "../constants/InitialCards";
-
-// Thrashcan Icon
-// const deteleIcon = <a className="deleteIcon" href=""></a>;
+import "../abstracts/home.scss";
 
 const Home = () => {
   const addButton = ButtonLinks.find((link) => link.key === "addNewButton");
 
+  // State for notification
   const [showNotification, setShowNotification] = useState(false);
 
+  // State for showing the chosen active card
   const [activeCard, setActiveCard] = useState<CardProps | undefined>(() => {
     const storedValue = localStorage.getItem(key);
     const parsedValue: CardProps[] = storedValue && JSON.parse(storedValue);
@@ -25,17 +25,17 @@ const Home = () => {
       : undefined;
   });
 
+  //State for storing cards, if no cards are in localstorage then it shows basic card as active
   const [cards, setCards] = useState<CardProps[]>(() => {
     const storedValue = localStorage.getItem(key);
-    console.log(storedValue);
     if (storedValue) {
       return JSON.parse(storedValue);
     }
     setActiveCard(initialCards[0]);
     return initialCards;
   });
-  // console.log("JSON.stringify(initalCards", JSON.stringify(initialCards));
 
+  // Function to delete current active card, also includes function for notification
   const deleteActiveCard = () => {
     if (activeCard) {
       // Filter out the active card and update the state with the remaining cards
@@ -65,6 +65,7 @@ const Home = () => {
     }
   };
 
+  // Setting new active card
   const setNewActiveCard = (cardNumber: string) => {
     setCards((prevCards) => {
       const updatedCards = prevCards.map((card) => ({
@@ -78,16 +79,18 @@ const Home = () => {
     });
   };
 
+  // Rendering out card
   useEffect(() => {
     localStorage.setItem(key, JSON.stringify(cards));
   }, [cards]);
 
+  // Thrashcan Icon
   const deleteIcon = (
     <div className="deleteIcon" onClick={deleteActiveCard}></div>
   );
 
   return (
-    <>
+    <section className="homeContainer">
       {/* Conditional rendering for notification */}
       <div className={`notification ${showNotification ? "show" : ""}`}>
         Card has been successfully deleted.
@@ -102,7 +105,7 @@ const Home = () => {
       {addButton && (
         <Button key={addButton.key} text={addButton.text} to={addButton.to} />
       )}
-    </>
+    </section>
   );
 };
 

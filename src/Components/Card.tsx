@@ -14,7 +14,6 @@ const CardList: React.FC<CardProps> = ({
   icon,
   text,
 }) => {
-  console.log(vendor);
   const cardStyle = {
     backgroundColor: bgColor,
     color: text,
@@ -22,7 +21,6 @@ const CardList: React.FC<CardProps> = ({
   const iconImg = {
     backgroundImage: `url(${icon})`,
   };
-  console.log(bgColor);
   return (
     <div style={cardStyle} className={`card ${vendor}`}>
       <div className="logoRow">
