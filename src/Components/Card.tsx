@@ -10,10 +10,15 @@ const CardList: React.FC<CardProps> = ({
   cardHolderName,
   validThru,
   vendor,
+  bgColor,
 }) => {
   console.log(vendor);
+  const cardStyle = {
+    backgroundColor: bgColor,
+  };
+  console.log(bgColor);
   return (
-    <div className={`card ${vendor}`}>
+    <div style={cardStyle} className={`card ${vendor}`}>
       <div className="logoRow">
         <img className={`wifiLogo ${vendor}`} src={wifiLogo} alt="Wifi Logo" />
         <img className="chipLogo" src={chipLogo} alt="Chip Logo" />

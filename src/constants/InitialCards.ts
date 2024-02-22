@@ -6,6 +6,7 @@ export const initialCards: CardProps[] = [
     cardHolderName: "FIRSTNAME LASTNAME",
     validThru: "MM/YY",
     vendor: "default",
+    bgColor: " rgba(208, 208, 208, 1)",
     active: true,
   },
 ];

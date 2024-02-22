@@ -40,6 +40,7 @@ const TextInput: React.FC = () => {
     const newCard = {
       ...inputData,
       vendor: selectedVendor.vendor,
+      bgColor: selectedVendor.bgColor,
     };
 
     cards.push(newCard);
