@@ -9,7 +9,7 @@ type InputData = {
   cardHolderName: string;
   validThru: string;
   ccv: string;
-  vendor?: any;
+  // vendor?: any;
 };
 
 const TextInput: React.FC = () => {
@@ -41,6 +41,8 @@ const TextInput: React.FC = () => {
       ...inputData,
       vendor: selectedVendor.vendor,
       bgColor: selectedVendor.bgColor,
+      icon: selectedVendor.icon,
+      text: selectedVendor.color,
     };
 
     cards.push(newCard);
