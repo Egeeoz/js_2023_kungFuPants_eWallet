@@ -52,6 +52,9 @@ const TextInput: React.FC = () => {
     );
     // Redirect to another page or perform any other action
     console.log(e);
+    setTimeout(function () {
+      window.location.reload();
+    }, 500);
   };
 
   const handleVendorSelection = (vendor: any) => {
