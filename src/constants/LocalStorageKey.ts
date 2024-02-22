@@ -1,1 +1,1 @@
-export const key = 'credit-cards'
+export const key = "cards";

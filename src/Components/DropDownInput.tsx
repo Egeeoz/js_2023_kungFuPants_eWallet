@@ -5,9 +5,10 @@ import whiteImg from "../assets/white.icon.jpg";
 import options from "../constants/DropDownOption";
 
 interface Option {
+  vendor: string;
   icon: string;
   text: string;
-  backgroundColor: string;
+  bgColor: string;
   color: string;
 }
 
@@ -19,18 +20,16 @@ const Dropdown: React.FC<DropDownProps> = ({ onGetTheSelectedVendor }) => {
   const [isActive, setIsActive] = useState(false);
   const [selectedOption, setSelectedOption] = useState({
     icon: whiteImg,
+    vendor: "default",
     text: "",
-    backgroundColor: "",
+    bgColor: "",
     color: "",
   });
 
   const getVendorSelection = (option: Option) => {
     return (
       <>
-        <div
-          className="img-box"
-          style={{ backgroundColor: option.backgroundColor }}
-        >
+        <div className="img-box" style={{ backgroundColor: option.bgColor }}>
           <img className="img-icon" src={option.icon} />
         </div>
         <span>{option.text}</span>
@@ -50,7 +49,7 @@ const Dropdown: React.FC<DropDownProps> = ({ onGetTheSelectedVendor }) => {
         <button className="dropbtn" onClick={(e) => toggleDropdown(e)}>
           <div
             className="img-box"
-            style={{ backgroundColor: selectedOption.backgroundColor }}
+            style={{ backgroundColor: selectedOption.bgColor }}
           >
             <img className="img-icon" src={selectedOption.icon} />
           </div>

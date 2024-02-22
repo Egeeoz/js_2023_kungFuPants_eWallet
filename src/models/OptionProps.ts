@@ -1,7 +1,8 @@
 //Används i DropDownOption -> DropDownInput
 export interface Option {
+    vendor: string,
     icon: string,
     text: string,
-    backgroundColor: string,
+    bgColor: string,
     color: string,
   }

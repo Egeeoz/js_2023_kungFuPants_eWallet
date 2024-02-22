@@ -2,8 +2,8 @@
 .card-list-container {
   display: flex;
   flex-direction: column;
-  min-height: 200px;
-  height: 50vh;
+  min-height: min-content;
+  min-height: 30vh;
+  max-height: fit-content;
   margin-bottom: 0rem;
-  border: 2px solid rgb(0, 0, 0);
 }

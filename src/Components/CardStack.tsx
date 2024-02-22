@@ -1,7 +1,5 @@
 import "../abstracts/cardstack.scss"
-import "../abstracts/cardstack.scss"
 import Card from "./Card";
-import "../abstracts/cardstack.scss";
 import { CardProps } from "../models/CardProps";
 
 interface CardStackProps {
