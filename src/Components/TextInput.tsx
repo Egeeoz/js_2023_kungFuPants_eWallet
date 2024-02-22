@@ -2,12 +2,14 @@ import "../abstracts/textInput.scss";
 import { useState } from "react";
 import Dropdown from "./DropDownInput";
 import "../abstracts/button.scss";
+import { key } from "../constants/LocalStorageKey";
 
 type InputData = {
   cardNumber: string;
   cardHolderName: string;
   validThru: string;
   ccv: string;
+  vendor?: any;
 };
 
 const TextInput: React.FC = () => {
@@ -18,7 +20,7 @@ const TextInput: React.FC = () => {
     ccv: "",
   });
   const [selectedVendor, setSelectedVendor] = useState<any | null>(null);
-  const [cards, setCards] = useState<any[]>([]); // Array to hold card objects
+  const cards: InputData[] = JSON.parse(localStorage.getItem(key) as string); // Array to hold card objects
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -37,13 +39,19 @@ const TextInput: React.FC = () => {
 
     const newCard = {
       ...inputData,
-      vendor: selectedVendor,
+      vendor: selectedVendor.vendor,
+      bgColor: selectedVendor.bgColor,
     };
 
-    const updatedCards = [...cards, newCard]; // Add the new card to the array
-    setCards(updatedCards);
-    localStorage.setItem("cards", JSON.stringify(updatedCards));
+    cards.push(newCard);
+    console.log(cards); // Add the new card to the array
+    // setCards(updatedCards);
+    localStorage.setItem(
+      "cards",
+      JSON.stringify(cards.filter((c) => !c.cardNumber.includes("X")))
+    );
     // Redirect to another page or perform any other action
+    console.log(e);
   };
 
   const handleVendorSelection = (vendor: any) => {

@@ -2,20 +2,23 @@ import "../abstracts/cardstack.scss"
 import "../abstracts/cardstack.scss"
 import Card from "./Card";
 import "../abstracts/cardstack.scss";
-import CardLogo from "../assets/bitcoin.png";
-import AnotherCardLogo from "../assets/ninja.png";
+import { CardProps } from "../models/CardProps";
 
-function CardStack() {
+interface CardStackProps {
+  onClick: (nmr: string) => void;
+  cards: CardProps[]
+}
+
+const CardStack: React.FC<CardStackProps> = ({ onClick, cards }) => {
+  const inactiveCardsArray: CardProps[] = cards.filter(card => !card.active)
+
   return (
     <div className="card-list-container">
-      {[1, 2, 3].map((index) => (
-        <div className="card-list" key={index} style={{ marginBottom: `-250px` }}>
+      {
+      inactiveCardsArray.map((card, index) => (
+        <div className="card-list" key={index} style={{ marginBottom: `-250px` }} onClick={() => onClick(card.cardNumber)}>
           <Card
-            logoImg={index === 3 ? AnotherCardLogo : CardLogo}
-            cardNumber="12345678"
-            cardHolder="active"
-            validThru="01 / 24"
-            backGroundColor={index === 3 ? "green" : "rgba(208, 208, 208, 1)"}
+            {...card}
           />
         </div>
       ))}

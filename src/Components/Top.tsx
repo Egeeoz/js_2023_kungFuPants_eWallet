@@ -1,11 +1,13 @@
 import "../abstracts/top.scss";
 
+//Prop types for top component
 interface Props {
   smalltext: string;
   text: string;
   icon?: React.ReactNode;
 }
 
+//Top component
 const Top = ({ text, smalltext, icon }: Props) => {
   return (
     <>

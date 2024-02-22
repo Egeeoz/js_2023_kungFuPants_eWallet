@@ -1,10 +1,11 @@
 @use "./variables" as *;
-
+// Styling for button
 button {
   color: $button-color;
   background-color: white;
   font-size: 18px;
   border-radius: 8px;
+  border: 1px solid black;
   font-weight: 700;
   font-family: $text-font;
   min-width: 400px;
