@@ -51,6 +51,9 @@
   left: 20px;
   width: 50px;
   height: 40px;
+  &.default {
+    filter: invert(1) opacity(13%) brightness(3.5);
+  }
 }
 
 .cardLogo {

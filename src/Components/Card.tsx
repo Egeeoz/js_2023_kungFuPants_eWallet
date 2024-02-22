@@ -21,7 +21,7 @@ const CardList: React.FC<CardProps> = ({
     <div style={cardStyle} className={`card ${vendor}`}>
       <div className="logoRow">
         <img className={`wifiLogo ${vendor}`} src={wifiLogo} alt="Wifi Logo" />
-        <img className="chipLogo" src={chipLogo} alt="Chip Logo" />
+        <img className={`chipLogo ${vendor}`} src={chipLogo} alt="Chip Logo" />
         <div className={`cardLogo ${vendor}`} />
       </div>
       <div className={`cardNo ${vendor}`}>
