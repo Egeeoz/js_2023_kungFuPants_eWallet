@@ -11,7 +11,7 @@ interface Option {
   vendor: string;
   icon: string;
   text: string;
-  backgroundColor: string;
+  bgColor: string;
   color: string;
 }
 
@@ -25,7 +25,7 @@ const Dropdown: React.FC<DropDownProps> = ({ onGetTheSelectedVendor }) => {
     icon: whiteImg,
     vendor: "default",
     text: "",
-    backgroundColor: "",
+    bgColor: "",
     color: "",
   });
 
@@ -34,38 +34,35 @@ const Dropdown: React.FC<DropDownProps> = ({ onGetTheSelectedVendor }) => {
       vendor: "bitcoin",
       icon: bitcoin,
       text: "BITCOIN INC",
-      backgroundColor: "rgba(255, 174, 52, 1)",
+      bgColor: "rgba(255, 174, 52, 1)",
       color: "rgba(0, 0, 0, 1)",
     },
     {
       vendor: "ninja",
       icon: ninja,
       text: "NINJA BANK",
-      backgroundColor: "rgba(34, 34, 34, 1)",
+      bgColor: "rgba(34, 34, 34, 1)",
       color: "rgba(255, 255, 255, 1)",
     },
     {
       vendor: "chain",
       icon: chain,
       text: "BLOCK CHAIN INC",
-      backgroundColor: "rgba(139, 88, 249, 1)",
+      bgColor: "rgba(139, 88, 249, 1)",
       color: "rgba(255, 255, 255, 1)",
     },
     {
       vendor: "evil",
       icon: evil,
       text: "EVIL CORP",
-      backgroundColor: "rgba(243, 51, 85, 1)",
+      bgColor: "rgba(243, 51, 85, 1)",
       color: "rgba(255, 255, 255, 1)",
     },
   ];
   const getVendorSelection = (option: Option) => {
     return (
       <>
-        <div
-          className="img-box"
-          style={{ backgroundColor: option.backgroundColor }}
-        >
+        <div className="img-box" style={{ backgroundColor: option.bgColor }}>
           <img className="img-icon" src={option.icon} />
         </div>
         <span>{option.text}</span>
@@ -85,7 +82,7 @@ const Dropdown: React.FC<DropDownProps> = ({ onGetTheSelectedVendor }) => {
         <button className="dropbtn" onClick={(e) => toggleDropdown(e)}>
           <div
             className="img-box"
-            style={{ backgroundColor: selectedOption.backgroundColor }}
+            style={{ backgroundColor: selectedOption.bgColor }}
           >
             <img className="img-icon" src={selectedOption.icon} />
           </div>

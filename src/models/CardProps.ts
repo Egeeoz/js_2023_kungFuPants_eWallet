@@ -3,5 +3,6 @@ export interface CardProps {
   cardHolderName: string;
   validThru: string;
   vendor: string;
+  bgColor: string;
   active?: boolean;
 }
