@@ -3,8 +3,8 @@ import TextInput from "../Components/TextInput";
 import { Link } from "react-router-dom";
 import Card from "../Components/Card";
 import { initialCards } from "../constants/InitialCards";
-import homeIcon from "../assets/back-arrow.png"
-import "../abstracts/homeIcon.scss"
+import homeIcon from "../assets/back-arrow.png";
+import "../abstracts/homeIcon.scss";
 
 const AddCard = () => {
   return (
