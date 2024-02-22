@@ -11,8 +11,15 @@
   padding: 20px 20px;
   border-radius: 8px;
   box-shadow: 0px 0px 16px 0px #0000001f;
+  text-shadow: 0.5px 0.5px 0 rgba(0, 0, 0, 0.55);
+
+  &.bitcoin {
+    text-shadow: 0.5px 0.5px 0 rgba(254, 254, 254, 0.24);
+  }
+  &.defaul {
+    text-shadow: 0.5px 0.5px 0 rgba(254, 254, 254, 0.24);
+  }
 }
-// Styles for different logos
 .wifiLogo {
   position: absolute;
   top: 20px;
@@ -74,7 +81,7 @@
 // Styling for different information on the card
 .cardNumber {
   margin: 0 auto;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
   width: 385px;
   height: 42px;
   font-weight: 400;
@@ -101,7 +108,7 @@
 
 .titleText {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
   &.bitcoin {
     color: rgba(0, 0, 0, 1);
   }
@@ -124,7 +131,7 @@
 .holderName,
 .validThru {
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
   &.bitcoin {
     color: black;
   }
