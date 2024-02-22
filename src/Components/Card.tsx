@@ -11,12 +11,16 @@ const CardList: React.FC<CardProps> = ({
   validThru,
   vendor,
   bgColor,
+  icon,
+  text,
 }) => {
   console.log(vendor);
   const cardStyle = {
     backgroundColor: bgColor,
-    //background-img: url icon
-    //textcolor:color
+    color: text,
+  };
+  const iconImg = {
+    backgroundImage: `url(${icon})`,
   };
   console.log(bgColor);
   return (
@@ -24,7 +28,7 @@ const CardList: React.FC<CardProps> = ({
       <div className="logoRow">
         <img className={`wifiLogo ${vendor}`} src={wifiLogo} alt="Wifi Logo" />
         <img className={`chipLogo ${vendor}`} src={chipLogo} alt="Chip Logo" />
-        <div className={`cardLogo ${vendor}`} />
+        <div style={iconImg} className={`cardLogo ${vendor}`} />
       </div>
       <div className={`cardNo ${vendor}`}>
         <p className={`cardNumber ${vendor}`}>

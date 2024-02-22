@@ -11,24 +11,15 @@
   padding: 20px 20px;
   border-radius: 8px;
   box-shadow: 0px 0px 16px 0px #0000001f;
+  text-shadow: 0.5px 0.5px 0 rgba(0, 0, 0, 0.55);
 
-  // &.bitcoin {
-  //   background-color: $bitcoin-cardColor;
-  // }
-  // &.chain {
-  //   background-color: $block-cardColor;
-  // }
-  // &.evil {
-  //   background-color: $evil-cardColor;
-  // }
-  // &.ninja {
-  //   background-color: $ninja-cardColor;
-  // }
-  // &.default {
-  //   background-color: $defualt-card;
-  // }
+  &.bitcoin {
+    text-shadow: 0.5px 0.5px 0 rgba(254, 254, 254, 0.24);
+  }
+  &.defaul {
+    text-shadow: 0.5px 0.5px 0 rgba(254, 254, 254, 0.24);
+  }
 }
-// Styles for different logos
 .wifiLogo {
   position: absolute;
   top: 20px;
@@ -57,35 +48,26 @@
 }
 
 .cardLogo {
+  background-size: contain;
+  background-repeat: no-repeat;
   position: absolute;
   top: 25px;
   right: 25px;
-  color: rgba(255, 255, 255, 0.8);
+  // color: rgba(255, 255, 255, 0.8);
   opacity: 80%;
   width: 27.5px;
   height: 38.5px;
-
-  &.bitcoin {
-    background: url("../assets/bitcoin.png");
-  }
-
-  &.chain {
-    background: url("../assets/chain.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
   &.evil {
-    background: url("../assets/evil.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+    width: 38px;
+    height: 34px;
+  }
+  &.chain {
+    width: 38px;
+    height: 38px;
   }
   &.ninja {
-    background: url("../assets/ninja.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  &.default {
-    background: url("../assets/bitcoin.png");
+    width: 34px;
+    height: 35px;
   }
 }
 
@@ -99,7 +81,7 @@
 // Styling for different information on the card
 .cardNumber {
   margin: 0 auto;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
   width: 385px;
   height: 42px;
   font-weight: 400;
@@ -126,7 +108,7 @@
 
 .titleText {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
   &.bitcoin {
     color: rgba(0, 0, 0, 1);
   }
@@ -149,7 +131,7 @@
 .holderName,
 .validThru {
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
   &.bitcoin {
     color: black;
   }
