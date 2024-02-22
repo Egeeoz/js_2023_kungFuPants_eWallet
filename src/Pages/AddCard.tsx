@@ -3,16 +3,15 @@ import TextInput from "../Components/TextInput";
 import { Link } from "react-router-dom";
 import Card from "../Components/Card";
 import { initialCards } from "../constants/InitialCards";
-import homeIcon from "../assets/back-arrow.png";
+
 import "../abstracts/homeIcon.scss";
 
 const AddCard = () => {
+  const homeIcon = <Link to="/" className="homeIcon"></Link>;
+
   return (
     <>
-      <Link className="homeIcon" to="/">
-        <img src={homeIcon} alt="Home Icon" width="32px" />
-      </Link>
-      <Top text="Add a new bank card" smalltext="New Card" />
+      <Top text="Add a new bank card" smalltext="New Card" icon={homeIcon} />
       <Card {...initialCards[0]} />
       <TextInput />
     </>

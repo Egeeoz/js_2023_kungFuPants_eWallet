@@ -3,6 +3,7 @@ import { useState } from "react";
 import Dropdown from "./DropDownInput";
 import "../abstracts/button.scss";
 import { key } from "../constants/LocalStorageKey";
+import "../abstracts/deleteIcon.scss";
 
 type InputData = {
   cardNumber: string;
@@ -13,6 +14,8 @@ type InputData = {
 };
 
 const TextInput: React.FC = () => {
+  const [showNotification, setShowNotification] = useState(false);
+
   const [inputData, setInputData] = useState<InputData>({
     cardNumber: "",
     cardHolderName: "",
@@ -52,11 +55,19 @@ const TextInput: React.FC = () => {
       "cards",
       JSON.stringify(cards.filter((c) => !c.cardNumber.includes("X")))
     );
+
+    // Hide notification after 3 seconds
+    // setTimeout(() => {
+    //   setShowNotification(false);
+    // }, 3000);
+
+    setShowNotification(true);
     // Redirect to another page or perform any other action
     console.log(e);
     setTimeout(function () {
+      setShowNotification(false);
       window.location.reload();
-    }, 500);
+    }, 1500);
   };
 
   const handleVendorSelection = (vendor: any) => {
@@ -65,6 +76,9 @@ const TextInput: React.FC = () => {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
+      <div className={`notification ${showNotification ? "show" : ""}`}>
+        Card has been successfully added.
+      </div>
       <label>
         CARD NUMBER
         <input
