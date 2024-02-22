@@ -80,7 +80,7 @@ const Home = () => {
   return (
     <>
       <Top text="E-wallet" smalltext="Active card" icon={deleteIcon} />
-      {activeCard ? <Card {...activeCard} /> : null}
+      {activeCard ? <Card {...activeCard} /> : <div style={{ minHeight: '241px' }}></div>}
       <CardStack onClick={(nmr) => setNewActiveCard(nmr)} cards={cards} />
       {addButton && (
         <Button key={addButton.key} text={addButton.text} to={addButton.to} />
