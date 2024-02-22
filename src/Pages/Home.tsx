@@ -15,6 +15,8 @@ import { initialCards } from "../constants/InitialCards";
 const Home = () => {
   const addButton = ButtonLinks.find((link) => link.key === "addNewButton");
 
+  const [showNotification, setShowNotification] = useState(false);
+
   const [activeCard, setActiveCard] = useState<CardProps | undefined>(() => {
     const storedValue = localStorage.getItem(key);
     const parsedValue: CardProps[] = storedValue && JSON.parse(storedValue);
@@ -53,6 +55,13 @@ const Home = () => {
 
       // Update localStorage with the new set of cards
       localStorage.setItem(key, JSON.stringify(updatedCards));
+
+      setShowNotification(true);
+
+      // Hide notification after 3 seconds
+      setTimeout(() => {
+        setShowNotification(false);
+      }, 3000);
     }
   };
 
@@ -79,8 +88,16 @@ const Home = () => {
 
   return (
     <>
+      {/* Conditional rendering for notification */}
+      <div className={`notification ${showNotification ? "show" : ""}`}>
+        Card has been successfully deleted.
+      </div>
       <Top text="E-wallet" smalltext="Active card" icon={deleteIcon} />
-      {activeCard ? <Card {...activeCard} /> : <div style={{ minHeight: '241px' }}></div>}
+      {activeCard ? (
+        <Card {...activeCard} />
+      ) : (
+        <div style={{ minHeight: "241px" }}></div>
+      )}
       <CardStack onClick={(nmr) => setNewActiveCard(nmr)} cards={cards} />
       {addButton && (
         <Button key={addButton.key} text={addButton.text} to={addButton.to} />

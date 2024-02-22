@@ -4,3 +4,28 @@
   height: 24px;
   background-image: url(../assets/bin.png);
 }
+
+// Css for notification for when deleting a card
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50px);
+  z-index: 1000;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+}
+
+// Css for smooth transition of the notification
+.notification.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0px);
+}
