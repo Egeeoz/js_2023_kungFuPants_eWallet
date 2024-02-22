@@ -15,6 +15,8 @@ const CardList: React.FC<CardProps> = ({
   console.log(vendor);
   const cardStyle = {
     backgroundColor: bgColor,
+    //background-img: url icon
+    //textcolor:color
   };
   console.log(bgColor);
   return (
